@@ -1,0 +1,6 @@
+---
+- hosts: headnode
+  become: yes
+
+  roles:
+    - headnode

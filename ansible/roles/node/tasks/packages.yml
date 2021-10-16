@@ -1,0 +1,15 @@
+---
+
+- name: Install pip
+  apt: 
+    name: python-pip
+    state: latest
+    update_cache: yes
+  tags: ansible
+
+- name: Install ansible via pip
+  pip:
+    name: ansible
+    state: latest
+  tags: ansible
+

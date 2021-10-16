@@ -1,0 +1,13 @@
+---
+
+- name: mkdir /etc/ansible/hosts
+  file: path=/etc/ansible state=directory recurse=yes
+  tags: ansible
+
+- name: Copy inventory to /etc/ansible/hosts
+  copy: src=inventory dest=/etc/ansible/hosts owner=root group=root mode=644
+  tags: ansible
+
+# - name: Get slurm.conf file
+#   copy: src=slurm.conf dest=/etc/slurm/slurm.conf backup=yes owner=root group=root mode=644 
+#   tags: slurm
