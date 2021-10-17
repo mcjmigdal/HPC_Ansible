@@ -1,6 +1,9 @@
 ---
 - hosts: headnode
   become: yes
-
+  vars_files:
+    - vars/users.yml
   roles:
     - headnode
+    - common
+

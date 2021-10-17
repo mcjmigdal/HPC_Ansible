@@ -1,0 +1,18 @@
+---
+- name: Manage user accounts
+  group:
+    gid: "{{ item.gid }}"
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ users_groups }}"
+
+- name: Manage user accounts
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    comment: "{{ item.name | default('') }}"
+    state: "{{ item.state }}"
+    system: "{{ item.system | default('no')  }}"
+    groups: "{{ item.groups|join(',') | default('') }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+  loop: "{{ users }}"

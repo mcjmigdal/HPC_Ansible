@@ -12,16 +12,3 @@
     name: ansible
     state: latest
   tags: setup
-
-- name: Install OpenLDAP
-  apt:
-    name: slapd, ldap-utils
-    state: latest
-    update_cache: yes
-  tags: setup
-
-- name: Install python-ldap
-  pip:
-    name: python-ldap
-    state: latest
-  tags: setup
