@@ -13,3 +13,9 @@
     state: latest
   tags: ansible
 
+- name: Install OpenLDAP
+  apt:
+    name: slapd, ldap-utils
+    state: latest
+    update_cache: yes
+  tags: setup

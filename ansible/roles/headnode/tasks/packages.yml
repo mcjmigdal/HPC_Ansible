@@ -5,11 +5,23 @@
     name: python-pip
     state: latest
     update_cache: yes
-  tags: ansible
+  tags: setup
 
 - name: Install ansible via pip
   pip:
     name: ansible
     state: latest
-  tags: ansible
+  tags: setup
 
+- name: Install OpenLDAP
+  apt:
+    name: slapd, ldap-utils
+    state: latest
+    update_cache: yes
+  tags: setup
+
+- name: Install python-ldap
+  pip:
+    name: python-ldap
+    state: latest
+  tags: setup
