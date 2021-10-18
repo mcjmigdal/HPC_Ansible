@@ -1,0 +1,25 @@
+---
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html#examples
+users_groups:
+  - gid: 100
+    name: users
+    state: present
+  - gid: 27
+    name: sudo
+    state: present
+  - gid: 1002
+    name: numenoreans
+    state: present
+
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.htm
+users:
+  - name: mmigdal
+    uid: 1003
+    state: present
+    comment: mmigdal@iimcb.gov.pl
+    system: no
+    groups:
+      - users
+      - sudo
+      - numenoreans
+    shell: /bin/bash
