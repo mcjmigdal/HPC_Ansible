@@ -16,10 +16,8 @@ Vagrant.configure("2") do |config|
 
   # Setup use of ansible playbook
   config.vm.provision :ansible do |ansible|
-    #
-    #ansible.playbook = "ansible/vagrant_setup_playbook.yml"
-    ansible.playbook = "ansible/main.yml"
-    ansible.inventory_path = "ansible/inventory"
+    ansible.playbook = "bootstrap/playbook.yml"
+    ansible.inventory_path = "bootstrap/vagrant_inventory"
   end
 
   # Setup the hosts
