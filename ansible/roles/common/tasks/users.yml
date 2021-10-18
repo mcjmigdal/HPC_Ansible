@@ -10,6 +10,8 @@
   user:
     name: "{{ item.name }}"
     uid: "{{ item.uid }}"
+    password: "{{ item.password | default('omit') }}"
+    update_password: "{{ item.update_password | default('on_create') }}"
     comment: "{{ item.name | default('') }}"
     state: "{{ item.state }}"
     system: "{{ item.system | default('no')  }}"
