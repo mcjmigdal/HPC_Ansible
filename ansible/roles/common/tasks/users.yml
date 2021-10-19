@@ -1,5 +1,5 @@
 ---
-- name: Manage user accounts
+- name: Manage user groups
   group:
     gid: "{{ item.gid }}"
     name: "{{ item.name }}"
