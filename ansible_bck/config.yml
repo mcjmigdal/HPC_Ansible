@@ -1,4 +1,0 @@
----
-# Security configuration.
-security_sudoers_passwordless:
-  - mmigdal
