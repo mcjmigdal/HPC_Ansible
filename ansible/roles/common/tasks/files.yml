@@ -1,0 +1,38 @@
+---
+
+- name: Copy hosts to /etc/hosts
+  copy: src=files/hosts dest=/etc/hosts owner=root group=root mode=644
+  tags: slurm
+
+- name: mkdir /etc/munge/
+  file: path=/etc/munge/ state=directory recurse=yes
+  tags: slurm
+
+- name: Copy munge.key to /etc/munge/munge.key
+  copy: src=files/munge.key dest=/etc/munge/munge.key owner=munge group=munge mode=600
+  tags: slurm
+  notify: Restart munged
+
+- name: mkdir /var/spool/slurmd
+  file: path=/var/spool/slurmd state=directory recurse=yes
+  tags: slurm
+
+- name: mkdir /var/spool/slurmctld
+  file: path=/var/spool/slurmctld state=directory recurse=yes
+  tags: slurm
+
+- name: Copy slurm.conf to /etc/slurm-llnl/slurm.conf
+  copy: src=files/slurm.conf dest=/etc/slurm-llnl/slurm.conf owner=slurm group=slurm mode=644
+  tags: slurm
+
+- name: Copy cgroup.conf to /etc/slurm-llnl/cgroup.conf
+  copy: src=files/cgroup.conf dest=/etc/slurm-llnl/cgroup.conf owner=slurm group=slurm mode=644
+  tags: slurm
+
+- name: Set slurm permissions on /var/spool/slurmctld
+  file: path=/var/spool/slurmctld owner=root group=slurm mode=775
+  tags: slurm
+
+- name: Set slurm permissions on /var/spool/slurmd
+  file: path=/var/spool/slurmd owner=root group=slurm mode=775
+  tags: slurm

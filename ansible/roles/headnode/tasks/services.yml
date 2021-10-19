@@ -1,0 +1,7 @@
+---
+
+- name: Start slurmctld
+  service:
+    enabled: yes
+    name: slurmctld
+    state: started

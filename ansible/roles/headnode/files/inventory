@@ -6,7 +6,9 @@ c45 ansible_host=10.0.0.45 ansible_port=22 ansible_user='vagrant'
 [headnode]
 fisherman
 
-[hosts]
+[nodes]
 c43
 c44
+
+[rstudioserver]
 c45

@@ -1,0 +1,7 @@
+---
+
+- name: Restart munged
+  service:
+    enabled: yes
+    name: munge
+    state: restarted

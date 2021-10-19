@@ -1,0 +1,7 @@
+---
+
+- name: Start slurmd
+  service:
+    enabled: yes
+    name: slurmd
+    state: started
