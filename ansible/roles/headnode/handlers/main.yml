@@ -1,0 +1,7 @@
+---
+
+- name: Restart NFS
+  service:
+    enabled: yes
+    name: nfs-kernel-server
+    state: restarted

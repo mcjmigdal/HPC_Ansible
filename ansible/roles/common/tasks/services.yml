@@ -5,3 +5,9 @@
     enabled: yes
     name: systemd-timesyncd
     state: started
+
+- name: Start munged
+  service:
+    enabled: yes
+    name: munge
+    state: started

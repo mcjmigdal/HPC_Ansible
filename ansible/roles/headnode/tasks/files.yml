@@ -7,3 +7,8 @@
 - name: Copy inventory to /etc/ansible/hosts
   copy: src=files/inventory dest=/etc/ansible/hosts owner=root group=root mode=644
   tags: ansible
+
+- name: Copy exports to /etc/exports
+  copy: src=files/exports dest=/etc/exports owner=root group=root mode=644
+  tags: nfs
+  notify: Restart NFS

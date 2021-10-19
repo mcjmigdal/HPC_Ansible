@@ -1,3 +1,15 @@
 ---
 
+- include: packages.yml
 - include: services.yml
+
+- name: Mount headnode:/home to /home
+  mount:
+    dump: 0
+    fstype: nfs
+    opts: defaults,timeo=900,retrans=5,_netdev
+    passno: 0
+    path: /home
+    src: fisherman:/home
+    state: mounted
+  tags: nfs
