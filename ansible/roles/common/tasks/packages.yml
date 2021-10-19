@@ -5,4 +5,4 @@
     name: slurm-wlm, munge
     state: latest
     update_cache: yes
-  tags: setup
+  tags: slurm
