@@ -12,3 +12,8 @@
   copy: src=files/exports dest=/etc/exports owner=root group=root mode=644
   tags: nfs
   notify: Restart NFS
+
+- name: Copy slurm.conf to /etc/slurm-llnl/slurm.conf
+  copy: src=files/slurm.conf dest=/etc/slurm-llnl/slurm.conf owner=slurm group=slurm mode=644
+  tags: slurm
+  notify: Restart slurmctld

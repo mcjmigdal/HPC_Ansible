@@ -1,0 +1,7 @@
+---
+
+- name: Restart slurmd
+  service:
+    enabled: yes
+    name: slurmd
+    state: restarted

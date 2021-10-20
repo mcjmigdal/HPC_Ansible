@@ -21,10 +21,6 @@
   file: path=/var/spool/slurmctld state=directory recurse=yes
   tags: slurm
 
-- name: Copy slurm.conf to /etc/slurm-llnl/slurm.conf
-  copy: src=files/slurm.conf dest=/etc/slurm-llnl/slurm.conf owner=slurm group=slurm mode=644
-  tags: slurm
-
 - name: Copy cgroup.conf to /etc/slurm-llnl/cgroup.conf
   copy: src=files/cgroup.conf dest=/etc/slurm-llnl/cgroup.conf owner=slurm group=slurm mode=644
   tags: slurm

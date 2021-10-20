@@ -1,13 +1,13 @@
 ---
 
-- name: Start slurmctld
-  service:
-    enabled: yes
-    name: slurmctld
-    state: started
-
 - name: Start nfs-kernel-server
   service:
     enabled: yes
     name: nfs-kernel-server
+    state: started
+
+- name: Start slurmctld
+  service:
+    enabled: yes
+    name: slurmctld
     state: started

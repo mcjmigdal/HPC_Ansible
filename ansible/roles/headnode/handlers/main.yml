@@ -5,3 +5,9 @@
     enabled: yes
     name: nfs-kernel-server
     state: restarted
+
+- name: Restart slurmctld
+  service:
+    enabled: yes
+    name: slurmctld
+    state: restarted

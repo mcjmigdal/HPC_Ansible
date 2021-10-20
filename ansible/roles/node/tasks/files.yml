@@ -1,0 +1,6 @@
+---
+
+- name: Copy slurm.conf to /etc/slurm-llnl/slurm.conf
+  copy: src=files/slurm.conf dest=/etc/slurm-llnl/slurm.conf owner=slurm group=slurm mode=644
+  tags: slurm
+  notify: Restart slurmd
