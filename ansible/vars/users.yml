@@ -1,4 +1,5 @@
 ---
+
 # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html#examples
 users_groups:
   - gid: 100
