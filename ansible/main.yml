@@ -1,20 +1,23 @@
 ---
 
-vars_files: global_variables.yml
-
 - hosts: all
   become: yes
   vars_files:
+    - vars/global_variables.yml
     - vars/users.yml
   roles:
     - common
 
 - hosts: headnode
   become: yes
+  vars_files:
+    - vars/global_variables.yml
   roles:
     - headnode
 
 - hosts: nodes
   become: yes
+  vars_files:
+    - vars/global_variables.yml
   roles:
     - node
