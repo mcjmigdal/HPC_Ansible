@@ -1,1 +1,1 @@
-../ansible/roles/headnode/files/inventory
+../ansible/vars/inventory

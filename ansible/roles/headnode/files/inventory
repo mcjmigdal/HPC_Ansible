@@ -1,15 +1,1 @@
-fisherman ansible_host=10.0.0.73 ansible_port=22 ansible_user='vagrant'
-c43 ansible_host=10.0.0.43 ansible_port=22 ansible_user='vagrant'
-c44 ansible_host=10.0.0.44 ansible_port=22 ansible_user='vagrant'
-c45 ansible_host=10.0.0.45 ansible_port=22 ansible_user='vagrant'
-
-[headnode]
-fisherman
-
-[nodes]
-c43
-c44
-c45
-
-[rstudioserver]
-c45
+../../../vars/inventory
