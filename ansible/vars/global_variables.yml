@@ -1,3 +1,5 @@
 ---
 
 headnode: fisherman
+rstudio_server_version: "2021.09.0+351 (Ghost Orchid) for Ubuntu Bionic"
+rstudio_server_url: https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2021.09.0-351-amd64.deb

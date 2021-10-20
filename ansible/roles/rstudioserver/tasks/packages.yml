@@ -1,7 +1,22 @@
 ---
 
-# - name: Install ansible via pip
-#   pip:
-#     name: ansible
-#     state: latest
-#   tags: ansible
+- name: Install packages for RStudio Server
+  apt:
+    name: r-base, gdebi-core
+    state: latest
+    update_cache: yes
+
+- name: Check if Rstudio Server is already installed
+  command: rstudio-server version
+  register: rstudio_ver
+
+- name: Download RStudio Server
+  get_url: 
+    url: "{{ rstudio_server_url }}" 
+    dest: /tmp/rstudio-server.deb
+  when: rstudio_ver == rstudio_server_version
+
+
+- name: Install RStudio Server
+  command: gdebi -n /tmp/rstudio-server.deb
+  when: rstudio_ver == rstudio_server_version

@@ -21,3 +21,10 @@
     - vars/global_variables.yml
   roles:
     - node
+
+- hosts: c45
+  become: yes
+  vars_files:
+    - vars/global_variables.yml
+  roles:
+    - rstudioserver
