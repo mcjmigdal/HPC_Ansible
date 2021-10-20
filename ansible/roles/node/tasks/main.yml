@@ -10,6 +10,6 @@
     opts: defaults,timeo=900,retrans=5,_netdev
     passno: 0
     path: /home
-    src: fisherman:/home
+    src: "{{ headnode }}":/home
     state: mounted
   tags: nfs
